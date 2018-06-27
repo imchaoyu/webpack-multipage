@@ -1,0 +1,71 @@
+#questions {
+  background: url(../images/pagebg3.jpg) no-repeat;
+  background-size: 100% 100%
+}
+
+.que input {
+  -moz-appearance: none;
+       appearance: none;
+  -webkit-appearance: none;
+  outline: 0;
+  display: none
+}
+
+.que label {
+  display: block;
+  width: 100%;
+  height: 25px;
+  cursor: pointer;
+  color: #fdf4e7;
+  font-size: 16px;
+  margin-bottom: 2px;
+  margin-left: 5px
+}
+
+.que label input+span {
+  width: 15px;
+  height: 15px;
+  margin-right: 10px;
+  display: inline-block;
+  background: url(../images/checkbox.png) no-repeat;
+  background-position: 0 0
+}
+
+.que label input:checked+span {
+  background-position: 0 -16px
+}
+
+#questionsForm {
+  width: 80%;
+  margin: 10% auto
+}
+#questions .logo {
+  display: block;
+  width: 20%;
+  float: right;
+  margin: 5%
+}
+.que {
+  display: none
+}
+
+.q1 {
+  display: block
+}
+
+.que h1 {
+  color: #f6d3b2;
+  font-size: 16px;
+  padding-bottom: 10px
+}
+
+.que h1::before {
+  content: '';
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: #f6d3b2;
+  transform: rotate(45deg);
+  float: left;
+  margin: 5px 10px 0 0
+}

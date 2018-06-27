@@ -1,0 +1,268 @@
+b,
+body,
+body div,
+caption,
+dd,
+dl,
+dt,
+fieldset,
+form,
+h1,
+h2,
+h3,
+html,
+i,
+img,
+label,
+legend,
+li,
+ol,
+p,
+small,
+span,
+strong,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr,
+ul {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-weight: 400;
+  vertical-align: baseline;
+  background: 0 0
+}
+
+html {
+  box-sizing: border-box
+}
+
+*,
+:after,
+:before {
+  box-sizing: inherit
+}
+
+embed,
+img,
+object {
+  max-width: 100%
+}
+
+ul {
+  list-style: none
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: 0 0;
+  text-decoration: none
+}
+
+input,
+select {
+  vertical-align: middle
+}
+
+input[type=radio] {
+  vertical-align: text-bottom
+}
+
+input[type=checkbox] {
+  vertical-align: bottom
+}
+
+input,
+select,
+textarea {
+  font: 99% sans-serif
+}
+
+table {
+  font-size: inherit;
+  font: 100%
+}
+
+small {
+  font-size: 85%
+}
+
+strong {
+  font-weight: 700
+}
+
+td,
+td img {
+  vertical-align: top
+}
+
+.clickable,
+button,
+input[type=button],
+input[type=file],
+input[type=submit],
+label {
+  cursor: pointer
+}
+
+button,
+input,
+select,
+textarea {
+  margin: 0
+}
+
+button,
+input[type=button] {
+  width: auto;
+  overflow: visible
+}
+
+.clearfix:after {
+  content: " ";
+  display: block;
+  clear: both
+}
+
+body {
+  font-family: '\5FAE\8F6F\96C5\9ED1', '\5B8B\4F53', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 12px;
+  width: 100%;
+  height: 100%;
+  color: #333;
+  overflow: hidden
+}
+
+.slogan {
+  clear: both;
+  display: block;
+  width: 75%;
+  margin: 0 auto
+}
+
+#adviser,
+#card,
+#questions,
+#register {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.iptbor {
+  width: 80%;
+  height: 32px;
+  line-height: 32px
+}
+
+.btbor {
+  width: 40%;
+  height: 35px;
+  line-height: 35px
+}
+
+.btbor,
+.iptbor {
+  height: 40px;
+  border: 1px solid #fdf4e7;
+  background: #483c39;
+  padding: 1px;
+  border-radius: 5px;
+  margin: 7px auto
+}
+
+.btn {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  color: #483c39;
+  border: 1px solid #fdf4e7;
+  background: #fdf4e7;
+  text-align: center
+}
+
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both
+}
+
+.animated.infinite {
+  animation-iteration-count: infinite
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0
+  }
+  to {
+    opacity: 1
+  }
+}
+
+.fadeIn {
+  animation-name: fadeIn
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1
+  }
+  to {
+    opacity: 0
+  }
+}
+
+.fadeOut {
+  animation-name: fadeOut
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale3d(.3, .3, .3)
+  }
+  50% {
+    opacity: 1
+  }
+}
+
+.zoomIn {
+  animation-name: zoomIn
+}
+
+@keyframes fadeOutLeft {
+  from {
+    opacity: 1
+  }
+  to {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0)
+  }
+}
+
+.fadeOutLeft {
+  animation-name: fadeOutLeft
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0)
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0)
+  }
+}
+
+.fadeInRight {
+  animation-name: fadeInRight
+}

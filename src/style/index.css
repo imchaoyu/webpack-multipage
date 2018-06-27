@@ -1,0 +1,38 @@
+#register {
+  display: block;
+  background: url(../images/pagebg1.jpg) no-repeat;
+  background-size: 100% 100%
+}
+#register .logo {
+  display: block;
+  width: 35%;
+  margin: 10% auto
+}
+.regBox {
+  width: 80%;
+  margin: 10% auto
+}
+
+.regBox h2 {
+  text-align: center;
+  color: #fdf4e7;
+  font-size: 16px;
+  line-height: 180%
+}
+
+.regBox input {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  border: 1px solid #fdf4e7;
+  background: #fdf4e7;
+  position: relative;
+  border-radius: 5px;
+  color: #483c39;
+  font-size: 14px
+}
+
+.regBox input::-webkit-input-placeholder {
+  color: #9d9d9e
+}
