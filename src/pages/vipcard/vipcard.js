@@ -1,5 +1,5 @@
-import '../style/common.css'
-import '../style/vipcard.css'
+import '../../style/common.css'
+import './vipcard.css'
 $(function () {
   //alert(cookie);
   $('body').height($(document).height());

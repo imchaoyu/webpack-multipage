@@ -1,26 +1,27 @@
-#register {
-  display: block;
-  background: url(../images/pagebg1.jpg) no-repeat;
+
+#adviser {
+  background: url(../../images/pagebg4.jpg) no-repeat;
   background-size: 100% 100%
 }
-#register .logo {
-  display: block;
-  width: 35%;
-  margin: 10% auto
+#adviser .slogan {
+  margin-top: 20%
 }
-.regBox {
+.info {
   width: 80%;
   margin: 10% auto
 }
 
-.regBox h2 {
+.info h2 {
   text-align: center;
   color: #fdf4e7;
   font-size: 16px;
   line-height: 180%
 }
 
-.regBox input {
+.info .iptbor {
+  margin: 15px auto
+}
+.info input {
   display: block;
   width: 100%;
   height: 100%;
@@ -31,8 +32,4 @@
   border-radius: 5px;
   color: #483c39;
   font-size: 14px
-}
-
-.regBox input::-webkit-input-placeholder {
-  color: #9d9d9e
 }

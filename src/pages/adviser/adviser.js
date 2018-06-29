@@ -1,5 +1,5 @@
-import '../style/common.css'
-import '../style/adviser.css'
+import '../../style/common.css'
+import './adviser.css'
 $(function () {
   //alert(cookie);
   $('body').height($(document).height());

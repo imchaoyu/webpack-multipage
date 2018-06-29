@@ -40,62 +40,12 @@ $(function () {
     } else if (!regphone.test(cellphone)) {
       alert('手机号格式错误！')
     } else {
-      $.ajax({
-        type: "POST",
-        url: "doreg.php",
-        data: {
-          uid: cookie,
-          username: uname,
-          cellphone: cellphone
-        },
-        success: function (data) {
-
-          data = $.parseJSON(data);
-          cookie = data.uid;
-          if (data.data == 1 || data.data == 2) {
-            // var str = toUtf8(data.text);
-            $("#code").qrcode({
-              width: 174, //宽度
-              height: 174, //高度
-              text: data.uid
-            });
-            var mycanvas1 = document.getElementsByTagName('canvas')[0];
-            var img = convertCanvasToImage(mycanvas1);
-            $('#code').append(img);
-            $('#register').addClass('fadeOut').hide();
-            $('#card').show().addClass('fadeIn');
-          } else if (data == 3) {
-            alert("手机号与姓名不匹配");
-          } else {
-            alert("服务器繁忙请重试")
-          }
-        },
-        error: function (error) {
-          alert(error)
-        }
-      });
+      location.href='vipcard.html'
     }
   })
   // 点击问卷按钮
   $('#gotoAsk').on('click', function () {
-    //alert(cookie);
-    $.ajax({
-      type: "POST",
-      data: {
-        uid: cookie
-      },
-      url: "api_c.php",
-      success: function (data) {
-        // alert(data);
-        if (data == 1) {
-          alert("您已参加过问卷调查！");
-        } else if (data == 0) {
-          $('#card').addClass('fadeOut').hide();
-          $('#questions').show().addClass('fadeIn');
-        }
-      }
-    })
-
+    location.href='quesitions.html'
   })
   // quesitions
   $('.btn-next').on('click', function () {
@@ -110,31 +60,7 @@ $(function () {
 
   })
   $('.btn-submit').on('click', function () {
-    var uid = $('#uid').val();
-    var answers = $("#questionsForm").serializeArray();
-
-
-    $.ajax({
-      type: "POST",
-      url: "api_sub_wj.php",
-      data: {
-        uid: cookie,
-        answers: answers
-      },
-      success: function (data) {
-        console.log(data);
-        //data = $.parseJSON(data);
-        if (data == 1) {
-          $('#questions').hide();
-          $('#adviser').show().addClass('fadeIn');
-        } else {
-          alert("服务器繁忙请重试");
-        }
-      },
-      error: function (error) {
-        alert(error)
-      }
-    });
+    location.href='adviser.html'
   });
   // 置业顾问信息
   $('.btn-subadv').on('click', function () {
@@ -151,29 +77,7 @@ $(function () {
     } else if (!regphone.test(adviserPhone)) {
       alert('手机号格式错误！')
     } else {
-      $.ajax({
-        type: "POST",
-        url: "api_sub_gw.php",
-        data: {
-          uid: uid,
-          adviserName: adviserName,
-          adviserPhone: adviserPhone
-        },
-        success: function (data) {
-          //alert(data);
-          //data = $.parseJSON(data);
-          if (data == 1) {
-            alert('提交成功，感谢配合！');
-            $('#card').show().removeClass('fadeOut');
-            $('#adviser').hide();
-          } else {
-            alert("服务器繁忙请重试");
-          }
-        },
-        error: function (error) {
-          alert("服务器繁忙请重试2");
-        }
-      })
+      location.href='vipcard.html'
     }
   })
 })

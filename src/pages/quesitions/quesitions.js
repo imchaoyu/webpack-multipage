@@ -1,5 +1,5 @@
-import '../style/common.css'
-import '../style/quesitions.css'
+import '../../style/common.css'
+import './quesitions.css'
 $(function () {
   //alert(cookie);
   $('body').height($(document).height());

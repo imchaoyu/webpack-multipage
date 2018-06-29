@@ -14,7 +14,7 @@ const webpackConfigProd = {
   devtool: 'cheap-souce-map',
   output: {
     path: path.resolve(__dirname, '../dist'),
-    filename: './js/[name].[chunkhash].js',
+    filename: './js/[name].[chunkhash].min.js',
     publicPath: './'
   },
   module: {
@@ -30,6 +30,9 @@ const webpackConfigProd = {
       filename: 'css/[name].[chunkhash].min.css',
       allChunks: true
     }),
+    // new MiniCssExtractPlugin({
+    //   filename: "css/[name].css",
+    // }),
     new OptimizeCssPlugin({
       cssProcessorOptions: {
         safe: true

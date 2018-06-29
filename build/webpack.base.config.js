@@ -17,10 +17,10 @@ const RuleConfig = require('./webpack.rule.config.js');
  */
 var getHtmlConfig = function (name, chunks) {
   return {
-    template: `./src/pages/${name}.html`,
+    template: `./src/pages/${name}/${name}.html`,
     filename: `${name}.html`,
     inject: true,
-    hash: true,
+    // hash: true,
     chunks: chunks,
     minify: process.env.NODE_ENV === 'development' ? false : {
       removeComments: true, // 移除html注释
@@ -32,13 +32,15 @@ var getHtmlConfig = function (name, chunks) {
 
 module.exports = {
   entry: {
-    index: './src/js/index.js',
-    vipcard: './src/js/vipcard.js',
-    quesitions: './src/js/quesitions.js',
-    adviser: './src/js/adviser.js'
+    // 将所有css和js打包成一个文件，可使用单一入口
+    //main: './src/js/index.js'
+    index: './src/pages/index/index.js',
+    vipcard: './src/pages/vipcard/vipcard.js',
+    quesitions: './src/pages/quesitions/quesitions.js',
+    adviser: './src/pages/adviser/adviser.js'
   },
   resolve: {
-    extensions: ['.js','.css','.json'],
+    extensions: ['.js', '.css', '.json'],
     alias: {
       '@': path.join(__dirname, '..', 'src')
     }
@@ -65,26 +67,27 @@ module.exports = {
     }]),
     // 清除冗余css
     new PruifyCssWebpack({
-      paths: glob.sync(path.join(__dirname, './src/pages/*.html'))
+      paths: glob.sync(path.join(__dirname, './src/pages/**/*.html'))
     })
   ],
   // 提取js， vendor名字可改
-	optimization: {
+  optimization: {
     removeEmptyChunks: false, //移除空chunks 
-		splitChunks: {
-			cacheGroups: {
-				vendor: {
-					// test: /\.js$/,
-					test: path.resolve(__dirname, '../node_modules'),
-					chunks: "initial", //表示显示块的范围，有三个可选值：initial(初始块)、async(按需加载块)、all(全部块)，默认为all;
-					name: "vendor", //拆分出来块的名字(Chunk Names)，默认由块名和hash值自动生成；
-					minChunks: 1,
-					reuseExistingChunk: true,
-					enforce: true
-				}
-			}
-		}
-	}
+    splitChunks: {
+      cacheGroups: {
+        // 提取所有公共部分代码，命名为vendor
+        vendor: {
+          //test: /\.js$/,
+          // test: path.resolve(__dirname, '../node_modules'),
+          chunks: "initial", //表示显示块的范围，有三个可选值：initial(初始块)、async(按需加载块)、all(全部块)，默认为all;
+          name: "vendor", //拆分出来块的名字(Chunk Names)，默认由块名和hash值自动生成；
+          minChunks: 3,
+          reuseExistingChunk: true,
+          enforce: true
+        }
+      }
+    }
+  }
 }
 
 //配置页面

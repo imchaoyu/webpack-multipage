@@ -1,5 +1,5 @@
 #questions {
-  background: url(../images/pagebg3.jpg) no-repeat;
+  background: url(../../images/pagebg3.jpg) no-repeat;
   background-size: 100% 100%
 }
 
@@ -27,7 +27,7 @@
   height: 15px;
   margin-right: 10px;
   display: inline-block;
-  background: url(../images/checkbox.png) no-repeat;
+  background: url(../../images/checkbox.png) no-repeat;
   background-position: 0 0
 }
 
