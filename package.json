@@ -4,7 +4,6 @@
   "description": "a multi-page webpack demo",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --inline --color --progress --config build/webpack.dev.config.js",
     "build": "cross-env NODE_ENV=production webpack --inline --color --progress --config build/webpack.prod.config.js",
     "server": "live-server ./ --port=8888",
